@@ -2,9 +2,13 @@ services:
   - type: web
     name: TFC
     env: python
-    buildCommand: ""
+    buildCommand: 
+      pyenv install 3.11.9
+      pyenv global 3.11.9
+      pip install -r requirements.txt
     startCommand: python bot.py
     plan: free
     envVars:
       - key: BOT_TOKEN
         sync: false
+
