@@ -3,7 +3,8 @@ import asyncio
 import logging
 import shutil
 from pathlib import Path
-from aiogram import Bot, Dispatcher, types, executor
+import asyncio
+from aiogram import Bot, Dispatcher, types
 from aiogram.types import ContentType
 
 from ffmpeg_worker import process_file
@@ -138,4 +139,5 @@ async def handle_channel_posts(message: types.Message):
 
 if __name__ == "__main__":
     # تشغيل البوت بالـ polling
+
     executor.start_polling(dp, skip_updates=True)
